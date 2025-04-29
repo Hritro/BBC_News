@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <div className=''>
              <div className='bg-red-700 p-5 px-60 mt-5'>
-                <img src='./image.png'></img>
+                <img className='invert' src='/image.png'></img>
             </div>
             <div className='bg-[#222222]'>
                 <div className='px-60 cursor-pointer'>

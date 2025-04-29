@@ -9,6 +9,7 @@ import {
 } from "react-router";
 import Home from './Pages/Home.jsx';
 import NewsPage from './Pages/NewsPage.jsx';
+import DetailedNewsPage from './Pages/DetailedNewsPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,15 @@ const router = createBrowserRouter([
         element: <NewsPage></NewsPage>,
         loader: ({params}) => {
           return fetch(`https://news-api-fs.vercel.app/api/categories/${params.id}`)
+          .then(res => res.json())
+        }
+      },
+
+      {
+        path: '/news/:id',
+        element: <DetailedNewsPage></DetailedNewsPage>,
+        loader: ({params}) => {
+          return fetch(`https://news-api-fs.vercel.app/api/news/${params.id}`)
           .then(res => res.json())
         }
       }

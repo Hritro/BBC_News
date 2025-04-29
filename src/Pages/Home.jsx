@@ -1,12 +1,13 @@
 import React from 'react';
 import { useLoaderData } from 'react-router';
-import NewsGallary from '../Components/NewsGallary';
+
+import HomeNewsGallary from '../Components/HomeNewsGallary';
 
 const Home = () => {
     const data = useLoaderData()
     return (
         <div>
-            <NewsGallary news={data.articles}></NewsGallary>
+            <HomeNewsGallary news={data.articles}></HomeNewsGallary> 
         </div>
         
     );
